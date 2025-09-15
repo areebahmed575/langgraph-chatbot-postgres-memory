@@ -1,4 +1,4 @@
-# 🧠 LangGraph AI Assistant
+# 🧠 LangGraph AI Assistant with Persistent Memory & Summarization
 
 A sophisticated AI chatbot application built with **Streamlit**, **LangGraph**, and **PostgreSQL** featuring intelligent conversation management, real-time streaming, and automatic summarization.
 
