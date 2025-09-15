@@ -171,10 +171,10 @@ for message in st.session_state["message_history"]:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# User input
 user_input = st.chat_input("Type your message here...")
 if user_input:
     try:
+
         if st.session_state["new_chat"]:
             thread_name = user_input[:30]
             try:
@@ -212,12 +212,14 @@ if user_input:
 
             try:
 
-                for message_chunk, _ in chatbot.stream(
+                for message_chunk, metadata in chatbot.stream(
                     {"messages": [user_message]}, config=CONFIG, stream_mode="messages"
                 ):
 
-                    if hasattr(message_chunk, "content") and isinstance(
-                        message_chunk, AIMessage
+                    if (
+                        hasattr(message_chunk, "content")
+                        and isinstance(message_chunk, AIMessage)
+                        and metadata.get("langgraph_node") == "chat_node"
                     ):
                         response_text += message_chunk.content
                         response_box.markdown(response_text)
