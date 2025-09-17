@@ -50,19 +50,11 @@ A sophisticated AI chatbot application built with **Streamlit**, **LangGraph**, 
    DATABASE_URL=your_postgresql_connection_string
    
    # AI Model Configuration
-   GOOGLE_API_KEY=your_openai_api_key
+   GOOGLE_API_KEY=your_google_api_key
    MODEL_NAME=gemini-2.0-flash  # or your preferred model
-   
-   # Optional: Custom configurations
-   MAX_MESSAGES_BEFORE_SUMMARY=6
    ```
 
-4. **Initialize the database**
-   ```bash
-   python -c "from backend.core import init_db; init_db()"
-   ```
-
-5. **Run the application**
+4. **Run the application**
    ```bash
    streamlit run Login.py
    ```
