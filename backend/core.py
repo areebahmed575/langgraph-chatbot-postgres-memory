@@ -1,4 +1,3 @@
-# core.py
 import psycopg
 import hashlib
 import os
